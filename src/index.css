@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;600;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Inter", ui-sans-serif;
+  --font-display: "Plus Jakarta Sans", "Outfit", sans-serif;
+  
+  --color-brand-yellow: #FFD200;
+  --color-brand-orange: #FF9F00;
+  --color-vsl-red: #FF003C;
+  --color-button-yellow: #FFD200;
+}
+
+/* Wistia Placeholder Blur */
+wistia-player[media-id='mn5yvl7243']:not(:defined) {
+  display: block;
+  filter: blur(5px);
+  background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/mn5yvl7243/swatch');
+  padding-top: 56.25%;
+}
+
+@layer base {
+  body {
+    @apply font-sans text-slate-900 bg-[#F9FAFB] selection:bg-brand-yellow/30;
+  }
+}
+
+.button-glow-yellow {
+  @apply bg-brand-yellow text-slate-900 shadow-[0_10px_40px_-5px_rgba(255,210,0,0.4)] hover:shadow-[0_15px_50px_-5px_rgba(255,210,0,0.5)] hover:-translate-y-0.5 transition-all duration-300 font-black;
+}
+
+.button-glow-red {
+  @apply bg-[#FF003C] text-white shadow-[0_10px_40px_-5px_rgba(255,0,60,0.4)] hover:shadow-[0_15px_50px_-5px_rgba(255,0,60,0.5)] hover:-translate-y-0.5 transition-all duration-300 font-black;
+}
+
+.headline-orange {
+  @apply text-brand-orange drop-shadow-[0_2px_10px_rgba(255,159,0,0.2)];
+}
+
+.bg-dot-grid {
+  background-image: radial-gradient(rgba(0,0,0,0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.headline-highlight {
+  @apply text-brand-orange;
+}
