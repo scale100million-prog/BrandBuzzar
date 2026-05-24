@@ -11,10 +11,8 @@ import {
   MessageCircle,
   Play,
   TrendingUp,
-  Zap,
   Globe,
-  Users,
-  Timer
+  Users
 } from 'lucide-react';
 import React, { useState, useEffect } from 'react';
 
@@ -33,34 +31,11 @@ function Counter({ target }: { target: number }) {
   return <motion.span>{rounded}</motion.span>;
 }
 
-function CountdownTimer() {
-  const [timeLeft, setTimeLeft] = useState(600); // 10 minutes
-
-  useEffect(() => {
-    if (timeLeft <= 0) return;
-    const interval = setInterval(() => {
-      setTimeLeft(prev => prev - 1);
-    }, 1000);
-    return () => clearInterval(interval);
-  }, [timeLeft]);
-
-  const minutes = Math.floor(timeLeft / 60);
-  const seconds = timeLeft % 60;
-
-  return (
-    <span className="text-vsl-red font-bold font-mono text-xl md:text-2xl leading-none tabular-nums flex items-center gap-2">
-      <Timer className="w-5 h-5" />
-      {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
-    </span>
-  );
-}
-
 export default function App() {
   return (
     <div className="min-h-screen bg-[#FDFDFF] font-sans text-[#1A1A2E] pb-24">
       {/* VSL Landing Page Header */}
       <header className="relative pt-6 md:pt-12 pb-0 px-4 text-center overflow-hidden">
-        {/* Decorative Grid and Grains */}
         <div className="absolute inset-0 bg-dot-grid opacity-30 pointer-events-none" />
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-to-b from-brand-yellow/10 via-transparent to-transparent pointer-events-none" />
         
@@ -99,7 +74,7 @@ export default function App() {
         {/* VSL Section */}
         <div className="max-w-4xl mx-auto px-4 mb-12 text-center">
           <h3 className="text-2xl font-bold mb-6 flex items-center justify-center gap-3">
-             <Play className="w-6 h-6 text-brand-orange" fill="currentColor" /> Watch this first.
+            <Play className="w-6 h-6 text-brand-orange" fill="currentColor" /> Watch this first.
           </h3>
           
           <motion.div 
@@ -188,7 +163,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* SECTION 3 — THE PROBLEM (REDESIGNED) */}
+      {/* SECTION 3 — THE PROBLEM */}
       <section className="pt-16 pb-12 px-4 max-w-7xl mx-auto overflow-hidden">
         <div className="text-center mb-16 relative">
           <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-64 h-64 bg-brand-orange/5 blur-[100px] pointer-events-none" />
@@ -209,10 +184,8 @@ export default function App() {
         </div>
 
         <div className="grid lg:grid-cols-12 gap-8 items-start relative">
-          {/* Timeline Rail Background */}
           <div className="absolute top-0 left-[420px] bottom-0 w-[2px] bg-slate-100 hidden lg:block" />
 
-          {/* Left Column: Why Traditional Methods Fail */}
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -224,7 +197,6 @@ export default function App() {
               <h3 className="text-lg font-black text-[#1E1E31] leading-tight mb-8 uppercase tracking-wider">
                 Why Traditional Methods Are Failing You:
               </h3>
-              
               <div className="bg-[#F8FAFF] p-8 rounded-3xl border border-blue-50/50">
                 <p className="text-lg md:text-xl text-[#6B7280] italic leading-relaxed font-medium">
                   "We help manufacturers in Gujarat's industrial belt stop being invisible and start getting calls."
@@ -233,7 +205,6 @@ export default function App() {
             </div>
           </motion.div>
 
-          {/* Right Column: The 3 Points */}
           <div className="lg:col-span-8 space-y-6 relative ml-0 lg:ml-12">
             {[
               {
@@ -263,7 +234,6 @@ export default function App() {
                 transition={{ delay: point.delay }}
                 className="flex items-center gap-6 group relative"
               >
-                {/* Timeline Dot */}
                 <div className="hidden lg:flex shrink-0 w-12 h-12 bg-white rounded-full items-center justify-center border-2 border-brand-orange shadow-lg shadow-brand-orange/20 relative z-10 -ml-18">
                   <div className="w-2 h-2 bg-brand-orange rounded-full animate-pulse" />
                 </div>
@@ -297,7 +267,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* SECTION 4 — ABOUT (REDESIGNED) */}
+      {/* SECTION 4 — ABOUT */}
       <section className="pt-12 pb-16 px-4 bg-white relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[800px] bg-gradient-to-b from-slate-50/50 to-transparent pointer-events-none" />
         
@@ -356,7 +326,6 @@ export default function App() {
             </motion.p>
           </div>
 
-          {/* Stats Grid */}
           <div className="grid md:grid-cols-3 gap-8 mb-20">
             {[
               { label: "Location", val: "Vadodara-based", sub: "Gujarat Industrial Belt", icon: <Globe className="w-5 h-5 text-[#FF8A00]" /> },
@@ -482,29 +451,27 @@ export default function App() {
           >
             Book Your Strategy Call
           </a>
-          
-
         </div>
       </section>
 
       {/* Floating Sticky Footer */}
-      <footer className="fixed bottom-0 left-0 w-full bg-white/95 backdrop-blur-2xl border-t border-slate-200 z-50 p-5 shadow-[0_-10px_30px_rgba(0,0,0,0.05)]">
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-             <div className="hidden md:block w-10 h-10 bg-vsl-red/10 rounded-full flex items-center justify-center">
-              <Zap className="w-5 h-5 text-vsl-red" fill="currentColor" />
-             </div>
-            <div className="flex flex-col">
-              <CountdownTimer />
-              <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Limited-Time Offer</span>
+      <footer className="fixed bottom-0 left-0 w-full bg-white/95 backdrop-blur-2xl border-t border-slate-200 z-50 p-4 md:p-5 shadow-[0_-10px_30px_rgba(0,0,0,0.05)]">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-3 md:gap-4">
+          <div className="flex items-center gap-2 md:gap-3">
+            <div className="hidden md:flex shrink-0 w-10 h-10 bg-[#FFF4E5] rounded-full items-center justify-center">
+              <Users className="w-5 h-5 text-[#FF8A00]" />
             </div>
+            <p className="text-xs md:text-sm font-black text-[#1E1E31] leading-tight text-center md:text-left">
+              <span className="md:hidden">Only <span className="text-[#FF8A00]">3 spots</span> left this month</span>
+              <span className="hidden md:inline">We only take <span className="text-[#FF8A00]">3 new manufacturer clients</span> per month</span>
+            </p>
           </div>
           
           <a 
             href="https://calendly.com/buzzarbrand/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="button-glow-yellow text-xs md:text-xl px-8 md:px-16 py-4 rounded-full active:scale-95 inline-flex items-center justify-center text-center relative z-20 cursor-pointer"
+            className="button-glow-yellow text-xs md:text-xl px-6 md:px-16 py-3 md:py-4 rounded-full active:scale-95 inline-flex items-center justify-center text-center relative z-20 cursor-pointer shrink-0 font-black whitespace-nowrap"
           >
             Book Your Strategy Call
           </a>
