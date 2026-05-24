@@ -35,7 +35,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#FDFDFF] font-sans text-[#1A1A2E] pb-24">
       {/* VSL Landing Page Header */}
-      <header className="relative pt-6 md:pt-12 pb-0 px-4 text-center overflow-hidden">
+      <header className="relative pt-6 md:pt-12 pb-0 px-4 text-center">
         <div className="absolute inset-0 bg-dot-grid opacity-30 pointer-events-none" />
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-to-b from-brand-yellow/10 via-transparent to-transparent pointer-events-none" />
         
