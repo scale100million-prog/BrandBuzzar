@@ -83,8 +83,7 @@ export default function App() {
             animate={{ opacity: 1, scale: 1 }}
             className="font-display text-[38px] leading-[1.1] md:text-6xl lg:text-[76px] font-extrabold tracking-tight mb-8 md:mb-12 text-[#1E1E31]"
           >
-            Attention Manufacturers and <br className="hidden md:block" /> 
-            Exporters in India: <span className="text-[#FF8A00] block mt-2">Your Next Big Order Is Already Going to a Competitor.</span>
+            Attention Manufacturers in India: <span className="text-[#FF8A00] block mt-2">Your Next Big Order Is Already Going to a Competitor.</span>
           </motion.h1>
 
           <motion.p 
