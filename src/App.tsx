@@ -461,7 +461,7 @@ export default function App() {
             <div className="hidden md:flex shrink-0 w-10 h-10 bg-[#FFF4E5] rounded-full items-center justify-center">
               <Users className="w-5 h-5 text-[#FF8A00]" />
             </div>
-            <p className="text-xs md:text-sm font-black text-[#1E1E31] leading-tight text-center md:text-left">
+            <p className="text-sm md:text-base font-black text-[#1E1E31] leading-tight text-center md:text-left">
               <span className="md:hidden">Only <span className="text-[#FF8A00]">3 spots</span> left this month</span>
               <span className="hidden md:inline">We only take <span className="text-[#FF8A00]">3 new manufacturer clients</span> per month</span>
             </p>
@@ -471,7 +471,7 @@ export default function App() {
             href="https://calendly.com/buzzarbrand/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="button-glow-yellow text-xs md:text-xl px-6 md:px-16 py-3 md:py-4 rounded-full active:scale-95 inline-flex items-center justify-center text-center relative z-20 cursor-pointer shrink-0 font-black whitespace-nowrap"
+            className="button-glow-yellow text-sm md:text-xl px-6 md:px-16 py-3 md:py-4 rounded-full active:scale-95 inline-flex items-center justify-center text-center relative z-20 cursor-pointer shrink-0 font-black whitespace-nowrap"
           >
             Book Your Strategy Call
           </a>
