@@ -35,14 +35,14 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#FDFDFF] font-sans text-[#1A1A2E] pb-24">
       {/* VSL Landing Page Header */}
-      <header className="relative pt-6 md:pt-12 pb-0 px-4 text-center">
+      <header className="relative pt-3 md:pt-12 pb-0 px-4 text-center">
         <div className="absolute inset-0 bg-dot-grid opacity-30 pointer-events-none" />
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-to-b from-brand-yellow/10 via-transparent to-transparent pointer-events-none" />
         
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="relative inline-flex items-center gap-4 bg-white px-6 py-3 rounded-full shadow-sm border border-slate-100 mb-8 md:mb-16"
+          className="relative inline-flex items-center gap-4 bg-white px-6 py-3 rounded-full shadow-sm border border-slate-100 mb-3 md:mb-10"
         >
           <div className="bg-[#FFC700] p-1.5 rounded-full flex shrink-0">
             <Star className="w-4 h-4 text-slate-900" fill="currentColor" />
@@ -56,16 +56,16 @@ export default function App() {
           <motion.h1 
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="font-display text-[38px] leading-[1.1] md:text-6xl lg:text-[76px] font-extrabold tracking-tight mb-8 md:mb-12 text-[#1E1E31]"
+            className="font-display text-[24px] leading-[1.15] md:text-6xl lg:text-[76px] font-extrabold tracking-tight mb-2 md:mb-12 text-[#1E1E31]"
           >
-            Attention Manufacturers<br className="md:hidden" /> in India: <span className="text-[#FF8A00] block mt-2">Your Next Big Order Is Already Going to a Competitor.</span>
+            Attention Manufacturers<br className="md:hidden" /> in India: <span className="text-[#FF8A00] block mt-1">Your Next Big Order Is Already Going to a Competitor.</span>
           </motion.h1>
 
           <motion.p 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-lg md:text-xl text-[#4A4B65] max-w-4xl mx-auto leading-relaxed mb-8 md:mb-16 font-medium"
+            className="text-sm md:text-xl text-[#4A4B65] max-w-4xl mx-auto leading-snug mb-2 md:mb-16 font-medium"
           >
             Right now a buyer in <span className="text-[#1E1E31] font-black">Dubai, Australia, or India</span> is searching Google for <br className="hidden md:block" /> your product. He will call whoever shows up first. <span className="text-[#1E1E31] font-black">We make sure they find you. Not your competitor.</span>
           </motion.p>
@@ -73,8 +73,8 @@ export default function App() {
 
         {/* VSL Section */}
         <div className="max-w-4xl mx-auto px-4 mb-12 text-center">
-          <h3 className="text-2xl font-bold mb-6 flex items-center justify-center gap-3">
-            <Play className="w-6 h-6 text-brand-orange" fill="currentColor" /> Watch this first.
+          <h3 className="text-base md:text-2xl font-bold mb-2 md:mb-6 flex items-center justify-center gap-3">
+            <Play className="w-5 h-5 md:w-6 md:h-6 text-brand-orange" fill="currentColor" /> Watch this first.
           </h3>
           
           <motion.div 
@@ -82,14 +82,14 @@ export default function App() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="mb-8 relative rounded-2xl md:rounded-[32px] overflow-hidden border-4 md:border-8 border-white shadow-2xl bg-black aspect-video group"
+            className="mb-3 md:mb-8 relative rounded-2xl md:rounded-[32px] overflow-hidden border-4 md:border-8 border-white shadow-2xl bg-black aspect-video group"
           >
             {/* @ts-ignore */}
             <wistia-player media-id="mn5yvl7243" videoFoam="true" className="w-full h-full block"></wistia-player>
           </motion.div>
 
           <div className="max-w-2xl mx-auto">
-            <p className="text-base md:text-lg text-slate-600 mb-10 font-medium italic">
+            <p className="text-sm md:text-lg text-slate-600 mb-4 md:mb-10 font-medium italic">
               We show you what a buyer sees when they search for your product on Google right now — and why they are <span className="relative inline-block text-slate-900 font-bold">
                 calling someone else.
                 <motion.span 
